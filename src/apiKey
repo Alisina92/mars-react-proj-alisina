@@ -1,0 +1,20 @@
+https://api.nasa.gov/planetary/apod?api_key=EadfbVGxCxoFbSGyTWjZGVn7acbeQMSkcVlWJKdU
+
+
+EadfbVGxCxoFbSGyTWjZGVn7acbeQMSkcVlWJKdU
+
+
+https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=EadfbVGxCxoFbSGyTWjZGVn7acbeQMSkcVlWJKdU
+
+<ul>{values === null ?'Loading...': values.rovers.map((element,index)=>{
+        return <li key={index}>{arrOfDates.push(element.landing_date)}</li>;
+    }
+        
+    )}
+        </ul>
+
+        <ul>
+                {arrOfLaunchingDates.map((launch,index) => {
+                  return <li key={index}>{launch}</li>;
+                })}
+              </ul>

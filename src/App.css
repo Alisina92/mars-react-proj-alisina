@@ -6,7 +6,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.launching{
+    background-color: yellow;
+      width: 50% ;
+      height: 20%;
+  }
+  .landing{
+    background-color: blue;
+      width: 50% ;
+      height: 20%;
+  }
+  .chart-flex{
+    display: flex;
+    flex-direction: column;
 
+  }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,6 +42,14 @@
   color: #61dafb;
 }
 
+.table-flex{
+    display: flex;
+    justify-content: space-evenly;
+  }
+.list{
+   list-style-type: none;
+  }
+  
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

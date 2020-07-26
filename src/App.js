@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useEffect} from "react";
+import Title from './Title';
+import MarsData from './MarsData';
+import TimeLine from "./TimeLine";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const [values, setValues] = useState(null);
+   
+  useEffect(() => {
+    async function dataFetcher() {
+      const Response = await fetch(
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=EadfbVGxCxoFbSGyTWjZGVn7acbeQMSkcVlWJKdU`
+      );
+      if (!Response.ok) {
+        throw new Error(`HTTP error! status: ${Response.status}`);
+      } else {
+        let myData = await Response.json();
+        setValues(myData);
+      }
+    }
+    dataFetcher();
+  }, []);
+  if (values === null) {
+    return "Loading...";
+  } else {
+    return (
+      <div className="App">
+        <Title />
+        <MarsData values={values} setValues={setValues} />
+        <TimeLine values={values} setValues={setValues} />
+      </div>
+    );
+  }
+  
+};
 
 export default App;
