@@ -11,7 +11,7 @@ const MarsData = (props) => {
      return element.landing_date;
    });
   launchArr = props.values.rovers.map((el) => {
-    return el.launch_date;
+    return el.max_date;
   });
 
   LandingArr.sort(function (a, z) {
@@ -33,15 +33,15 @@ const MarsData = (props) => {
   return (
     <div className="table-flex">
       <div>
-        <h3>Launching</h3>
-        {launchArr.map((element) => {
-          return <div>{element}</div>;
+        <h3>Landing</h3>
+        {LandingArr.map((element,index) => {
+          return <div key={index}>{element}</div>;
         })}
       </div>
       <div>
-        <h3>Landing</h3>
-        {LandingArr.map((element) => {
-          return <div>{element}</div>;
+        <h3>End</h3>
+        {launchArr.map((element,index) => {
+          return <div key={index}>{element}</div>;
         })}
       </div>
  

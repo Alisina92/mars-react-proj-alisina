@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import Title from './Title';
 import MarsData from './MarsData';
 import TimeLine from "./TimeLine";
+import StoppedMarsData from'./StoppedImageData';
 import "./App.css";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Title />
         <MarsData values={values} setValues={setValues} />
         <TimeLine values={values} setValues={setValues} />
+        <StoppedMarsData values={values} setValues={setValues} />
       </div>
     );
   }

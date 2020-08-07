@@ -14,12 +14,12 @@ const TimeLine = (props) => {
   return (
     <div className="chart-flex">
        <h3>Overlapped landing data</h3>
-      {props.values.rovers.map((robots) => {
+      {props.values.rovers.map((robots,index) => {
         return (
-          <div
+          <div key={index}
             style={{
               width: "30%",
-              "margin-left": dateToPercent(new Date(robots.launch_date),timelineMin,timelineMax)+'%',
+              "marginLeft": dateToPercent(new Date(robots.launch_date),timelineMin,timelineMax)+'%',
             }}
             className="landing"
           >
@@ -31,13 +31,7 @@ const TimeLine = (props) => {
       })}
     </div>
 
-    // // <div style={{ width: "30%", "margin-left": "60%" }} className="landing">
-    //     3
-    //   </div>
-
-    //     {/* <div style={{ width: "30%", "margin-left": "40%" }} className="launching"> */}
-
-    //         {/* </div> */}
+  
   );
 };
 
